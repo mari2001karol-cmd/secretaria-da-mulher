@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias | Secretaria da Mulher de Lajedo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .noticias-topo-banner {
+        margin-top: 90px;
+        padding: 50px 0;
+        background: #fff5f7;
+        border-bottom: 1px solid #fecdd3;
+      }
+      .noticias-topo-banner h1 {
+        font-size: 2.2rem;
+        color: #1f2937;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .noticias-topo-banner p {
+        color: #4b5563;
+        font-size: 1rem;
+      }
+      .pagina-noticias-secao {
+        padding: 60px 0 40px;
+      }
+      .paginacao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 50px;
+      }
+      .paginacao a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        color: #374151;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+      .paginacao a.active,
+      .paginacao a:hover {
+        background: #db2777;
+        color: white;
+        border-color: #db2777;
+      }
+      .paginacao a.proximo {
+        width: auto;
+        padding: 0 16px;
+      }
+
+      /* Estilos para a Seção de Perguntas Frequentes (FAQ) */
+      .faq-secao {
+        padding: 60px 0 80px;
+        background: #fafafa;
+        border-top: 1px solid #e5e7eb;
+        scroll-margin-top: 100px;
+      }
+      .faq-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .faq-title h2 {
+        font-size: 1.8rem;
+        color: #1f2937;
+        font-weight: 700;
+      }
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .faq-item {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .faq-item h3 {
+        font-size: 1.05rem;
+        color: #db2777;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .faq-item p {
+        font-size: 0.9rem;
+        color: #4b5563;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/prefei.jfif" alt="Secretaria da Mulher" />
+          <div class="logo-text">
+            <h2>Secretaria da Mulher</h2>
+            <span>Prefeitura Municipal de Lajedo</span>
+          </div>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li>
+              <a href="direitos.html#tipos-violencia">Tipos de violência</a>
+            </li>
+            <li><a href="index.html#ajuda-section">Como pedir ajuda</a></li>
+            <li><a href="direitos.html">Direitos</a></li>
+            <li><a href="noticias.html" style="color: #db2777">Notícias</a></li>
+          </ul>
+        </nav>
+        <a href="index.html#ajuda-section" class="btn-ajuda header-btn-ajuda"
+          ><i class="bi bi-telephone-fill" style="margin-right: 8px"></i>
+          Precisa de ajuda?</a
+        >
+      </div>
+    </header>
+
+    <section class="noticias-topo-banner">
+      <div class="container">
+        <h1>Central de Notícias</h1>
+        <p>
+          Acompanhe os informativos, events e as principais ações da Secretaria
+          da Mulher de Lajedo.
+        </p>
+      </div>
+    </section>
+
+    <section class="pagina-noticias-secao">
+      <div class="container">
+        <div class="noticias-grid">
+          <article class="noticia-card">
+            <img src="imagens/noticia1.jpg" alt="" />
+            <span class="data"> 20 de maio de 2026 </span>
+            <h3>
+              Secretaria realiza roda de conversa sobre empoderamento feminino
+            </h3>
+            <p>
+              Encontro reuniu mulheres da comunidade para refletir, compartilhar
+              experiências e fortalecer vínculos.
+            </p>
+            <a href="noticia.html?id=1"> Ler mais → </a>
+          </article>
+          <article class="noticia-card">
+            <img src="imagens/noticia2.jpg" alt="" />
+            <span class="data"> 15 de maio de 2026 </span>
+            <h3>
+              Lajedo participa de encontro regional de políticas para mulheres
+            </h3>
+            <p>
+              Representantes da Secretaria discutiram ações voltadas ao
+              fortalecimento das políticas públicas para mulheres.
+            </p>
+            <a href="noticia.html?id=2"> Ler mais → </a>
+          </article>
+          <article class="noticia-card">
+            <img src="imagens/noticia3.jpg" alt="" />
+            <span class="data"> 02 de maio de 2026 </span>
+            <h3>
+              Maio Lilás reforça ações de combate à violência contra a mulher
+            </h3>
+            <p>
+              Durante todo o mês serão realizadas palestras, campanhas
+              educativas e ações de conscientização.
+            </p>
+            <a href="noticia.html?id=3"> Ler mais → </a>
+          </article>
+          <article class="noticia-card">
+            <img src="imagens/noticia4.jpg" alt="" />
+            <span class="data"> 28 de abril de 2026 </span>
+            <h3>Oficina de geração de renda fortalece autonomia feminina</h3>
+            <p>
+              Capacitação incentiva independência financeira e cria novas
+              oportunidades para mulheres do município.
+            </p>
+            <a href="noticia.html?id=4"> Ler mais → </a>
+          </article>
+        </div>
+
+        <div class="paginacao">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="proximo">Próximo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-secao" id="faq-section">
+      <div class="container">
+        <div class="faq-title">
+          <h2>Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h3>
+              <i class="bi bi-question-circle-fill"></i> Onde fica a nova sede
+              da Secretaria da Mulher de Lajedo e qual o horário?
+            </h3>
+            <p>
+              A nova sede fica localizada na Rua Vicente Ferreira, S/N (onde
+              funcionava a antiga Defensoria Pública, próximo à Farmácia de
+              Nivaldo). O atendimento ao público ocorre de segunda a
+              sexta-feira, das 07h às 13h.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <i class="bi bi-question-circle-fill"></i> Quais serviços
+              gratuitos são oferecidos pela Secretaria?
+            </h3>
+            <p>
+              Oferecemos acolhimento psicossocial continuado com psicólogas e
+              assistentes sociais, orientação jurídica preliminar, oficinas
+              gratuitas de geração de renda e direcionamento para programas de
+              proteção à mulher em vulnerabilidade.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <i class="bi bi-question-circle-fill"></i> Como fazer uma denúncia
+              anônima de violência doméstica?
+            </h3>
+            <p>
+              Você pode ligar gratuitamente para a Central de Atendimento à
+              Mulher através do número 180. O serviço funciona 24 horas por dia,
+              é totalmente confidencial e seguro. Em casos de emergência ou
+              flagrante, disque 190 para falar com a Polícia Militar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-col col-identidade">
+          <div class="footer-logo">
+            <img
+              src="imagens/prefei.jfif"
+              alt="Logo Prefeitura"
+              style="
+                width: 45px;
+                height: 45px;
+                object-fit: cover;
+                border-radius: 4px;
+              "
+            />
+            <div>
+              <h3>Secretaria da Mulher de Lajedo</h3>
+              <span>Em parceria com a Prefeitura Municipal de Lajedo</span>
+            </div>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/sec.mulher_lajedo/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/PrefeituradeLajedo/"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li>
+              <a href="direitos.html#tipos-violencia">Tipos de violência</a>
+            </li>
+            <li><a href="index.html#ajuda-section">Como pedir ajuda</a></li>
+            <li><a href="direitos.html">Direitos</a></li>
+            <li><a href="#">Notícias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="direitos.html">Lei Maria da Penha</a></li>
+            <li><a href="#faq-section">Perguntas Frequentes</a></li>
+            <li>
+              <a href="index.html#ajuda-section">Canais de Atendimento</a>
+            </li>
+            <li><a href="#">Notícias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col col-icones">
+          <h4>Canais de ajuda</h4>
+          <ul>
+            <li>
+              <i class="bi bi-telephone"></i
+              ><a href="tel:180">180 - Central de Atendimento à Mulher</a>
+            </li>
+            <li>
+              <i class="bi bi-shield"></i
+              ><a href="tel:190">190 - Polícia Militar</a>
+            </li>
+            <li>
+              <i class="bi bi-geo-alt"></i
+              ><span>Procure o CRAS ou CREAS mais próximo.</span>
+            </li>
+            <li>
+              <i class="bi bi-lock"></i
+              ><a
+                href="admin.html"
+                style="font-weight: 600; color: var(--rosa-principal)"
+                >Painel Restrito</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-flex">
+          <p>
+            © 2026 Secretaria da Mulher de Lajedo. Todos os direitos reservados.
+          </p>
+          <p>
+            Desenvolvido com
+            <i
+              class="bi bi-heart-fill"
+              style="color: var(--rosa-principal)"
+            ></i>
+            para todas as mulheres.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

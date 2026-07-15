@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informativo | Secretaria da Mulher de Lajedo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .artigo-secao {
+        margin-top: 90px;
+        padding: 60px 0 80px;
+        background: #fff;
+      }
+      .artigo-wrapper {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+      }
+      .artigo-conteudo {
+        flex: 2.2;
+      }
+      .artigo-sidebar {
+        flex: 1;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 25px;
+        position: sticky;
+        top: 120px;
+      }
+      .artigo-meta {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        color: #db2777;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+      .artigo-meta .categoria {
+        background: #fff1f2;
+        padding: 4px 12px;
+        border-radius: 50px;
+      }
+      .artigo-conteudo h1 {
+        font-size: 2.4rem;
+        color: #1f2937;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+      .artigo-imagem-principal {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 30px;
+      }
+      .artigo-texto p {
+        font-size: 1.05rem;
+        color: #374151;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+      .artigo-texto h2 {
+        font-size: 1.5rem;
+        color: #1f2937;
+        margin: 35px 0 15px;
+        font-weight: 700;
+      }
+      .artigo-sidebar h4 {
+        color: #1f2937;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #db2777;
+        padding-bottom: 8px;
+        width: fit-content;
+      }
+      .btn-voltar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #db2777;
+        font-weight: 600;
+        margin-bottom: 30px;
+        transition: 0.2s;
+      }
+      .btn-voltar:hover {
+        color: #be185d;
+        transform: translateX(-4px);
+      }
+      .noticia-mini {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .noticia-mini img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+      }
+      .noticia-mini h5 {
+        font-size: 0.9rem;
+        color: #374151;
+        line-height: 1.4;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .noticia-mini span {
+        font-size: 0.75rem;
+        color: #6b7280;
+      }
+      @media (max-width: 900px) {
+        .artigo-wrapper {
+          flex-direction: column;
+        }
+        .artigo-sidebar {
+          width: 100%;
+          position: static;
+        }
+        .artigo-conteudo h1 {
+          font-size: 1.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/prefei.jfif" alt="Secretaria da Mulher" />
+          <div class="logo-text">
+            <h2>Secretaria da Mulher</h2>
+            <span>Prefeitura Municipal de Lajedo</span>
+          </div>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li>
+              <a href="direitos.html#tipos-violencia">Tipos de violência</a>
+            </li>
+            <li><a href="index.html#ajuda-section">Como pedir ajuda</a></li>
+            <li><a href="direitos.html">Direitos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </nav>
+        <a href="index.html#ajuda-section" class="btn-ajuda header-btn-ajuda"
+          ><i class="bi bi-telephone-fill" style="margin-right: 8px"></i>
+          Precisa de ajuda?</a
+        >
+      </div>
+    </header>
+
+    <section class="artigo-secao">
+      <div class="container">
+        <div class="artigo-wrapper">
+          <main class="artigo-conteudo">
+            <a href="noticias.html" class="btn-voltar"
+              ><i class="bi bi-arrow-left"></i> Voltar para Notícias</a
+            >
+            <div class="artigo-meta">
+              <span class="categoria" id="noticia-categoria">Ações</span>
+              <span class="data" id="noticia-data"
+                ><i class="bi bi-calendar3"></i> 2026</span
+              >
+            </div>
+            <h1 id="noticia-titulo">Carregando notícia...</h1>
+            <img
+              src="imagens/noticia1.jpg"
+              id="noticia-imagem"
+              alt="Imagem Informativa"
+              class="artigo-imagem-principal"
+            />
+            <div class="artigo-texto" id="noticia-corpo"></div>
+          </main>
+
+          <aside class="artigo-sidebar">
+            <h4>Mais Recentes</h4>
+            <a href="noticia.html?id=1" class="noticia-mini"
+              ><img src="imagens/noticia1.jpg" alt="" />
+              <div>
+                <h5>Roda de conversa sobre empoderamento</h5>
+                <span>20 de Maio</span>
+              </div></a
+            >
+            <a href="noticia.html?id=2" class="noticia-mini"
+              ><img src="imagens/noticia2.jpg" alt="" />
+              <div>
+                <h5>Encontro regional de políticas públicas</h5>
+                <span>15 de Maio</span>
+              </div></a
+            >
+            <a href="noticia.html?id=3" class="noticia-mini"
+              ><img src="imagens/noticia3.jpg" alt="" />
+              <div>
+                <h5>Maio Lilás e ações de combate</h5>
+                <span>02 de Maio</span>
+              </div></a
+            >
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-col col-identidade">
+          <div class="footer-logo">
+            <img
+              src="imagens/prefei.jfif"
+              alt="Logo Prefeitura"
+              style="
+                width: 45px;
+                height: 45px;
+                object-fit: cover;
+                border-radius: 4px;
+              "
+            />
+            <div>
+              <h3>Secretaria da Mulher de Lajedo</h3>
+              <span>Em parceria com a Prefeitura Municipal de Lajedo</span>
+            </div>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/sec.mulher_lajedo/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li>
+              <a href="direitos.html#tipos-violencia">Tipos de violência</a>
+            </li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="direitos.html">Lei Maria da Penha</a></li>
+            <li>
+              <a href="noticias.html#faq-section">Perguntas Frequentes</a>
+            </li>
+            <li>
+              <a href="index.html#ajuda-section">Canais de Atendimento</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col col-icones">
+          <h4>Canais de ajuda</h4>
+          <ul>
+            <li>
+              <i class="bi bi-telephone"></i
+              ><a href="tel:180">180 - Central de Atendimento</a>
+            </li>
+            <li>
+              <i class="bi bi-shield"></i
+              ><a href="tel:190">190 - Polícia Militar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id") || "1";
+
+        const bancoNoticias = {
+          1: {
+            titulo:
+              "Secretaria realiza roda de conversa sobre empoderamento feminino",
+            data: "20 de maio de 2026",
+            categoria: "Ações Sociais",
+            imagem: "imagens/noticia1.jpg",
+            texto:
+              "<p>A Secretaria da Mulher da Prefeitura Municipal de Lajedo realizou um encontro focado no fortalecimento e na escuta ativa de mulheres da comunidade local. A ação promoveu debates profundos sobre igualdade, oportunidades e emancipação feminina.</p><p>As assistentes sociais destacaram a importância das rodas de diálogo constantes para mapear e amparar as necessidades de cada bairro de forma humanizada e participativa.</p>",
+          },
+          2: {
+            titulo:
+              "Lajedo participa de encontro regional de políticas para mulheres",
+            data: "15 de maio de 2026",
+            categoria: "Eventos",
+            imagem: "imagens/noticia2.jpg",
+            texto:
+              "<p>Representantes técnicos de Lajedo estiveram presentes no congresso estadual focado no avanço de políticas públicas protetivas de gênero. Foram discutidas novas metas integradas de segurança e acolhimento psicossocial para o agreste.</p><p>O intercâmbio de projetos bem-sucedidos visa trazer novas parcerias e metodologias de geração de emprego e renda voltadas às mulheres lajedenses.</p>",
+          },
+          3: {
+            titulo:
+              "Maio Lilás reforça ações de combate à violência contra a mulher",
+            data: "02 de maio de 2026",
+            categoria: "Campanhas",
+            imagem: "imagens/noticia3.jpg",
+            texto:
+              "<p>A prefeitura de Lajedo abriu oficialmente a campanha do Maio Lilás com blitze educativas, palestras escolares e distribuição de materiais explicativos sobre as diretrizes da Lei Maria da Penha.</p><p>O foco central da mobilização é orientar a população a identificar abusos psicológicos e morais precocemente, estimulando as denúncias sigilosas via canais locais e pelo Disque 180.</p>",
+          },
+          4: {
+            titulo: "Oficina de geração de renda fortalece autonomia feminina",
+            data: "28 de abril de 2026",
+            categoria: "Capacitação",
+            imagem: "imagens/noticia4.jpg",
+            texto:
+              "<p>Teve início o novo ciclo de cursos práticos e profissionalizantes idealizados pela Secretaria da Mulher de Lajedo. As oficinas buscam estruturar a independência e sustentabilidade financeira das participantes no município.</p><p>A coordenação frisou que impulsionar pequenos negócios geridos por mulheres rompe ciclos de dependência econômica, gerando liberdade e novas perspectivas profissionais.</p>",
+          },
+        };
+
+        const noticia = bancoNoticias[id];
+        if (noticia) {
+          document.getElementById("noticia-titulo").innerText = noticia.titulo;
+          document.getElementById("noticia-data").innerHTML =
+            `<i class="bi bi-calendar3"></i> ${noticia.data}`;
+          document.getElementById("noticia-categoria").innerText =
+            noticia.categoria;
+          document.getElementById("noticia-imagem").src = noticia.imagem;
+          document.getElementById("noticia-corpo").innerHTML = noticia.texto;
+          document.title = `${noticia.titulo} | Secretaria da Mulher`;
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

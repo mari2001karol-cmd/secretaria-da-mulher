@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conheça Seus Direitos | Secretaria da Mulher de Lajedo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .direitos-topo {
+        margin-top: 90px;
+        padding: 60px 0;
+        background: #fff5f7;
+        border-bottom: 1px solid #fecdd3;
+      }
+      .direitos-topo h1 {
+        font-size: 2.4rem;
+        color: #1f2937;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .direitos-topo p {
+        color: #4b5563;
+        font-size: 1.1rem;
+        max-width: 800px;
+        line-height: 1.6;
+      }
+      .direitos-conteudo {
+        padding: 60px 0 80px;
+      }
+      .violencia-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin: 40px 0 60px;
+        scroll-margin-top: 120px;
+      }
+      .violencia-card {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 30px;
+        transition: 0.3s;
+      }
+      .violencia-card:hover {
+        border-color: #db2777;
+        box-shadow: 0 10px 25px rgba(219, 39, 119, 0.04);
+      }
+      .violencia-card h3 {
+        color: #db2777;
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .violencia-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #4b5563;
+      }
+      .lei-bloco {
+        background: #fafafa;
+        border-left: 4px solid #db2777;
+        padding: 30px;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 60px;
+      }
+      .lei-bloco h2 {
+        font-size: 1.6rem;
+        color: #1f2937;
+        margin-bottom: 15px;
+      }
+      .lei-bloco p {
+        line-height: 1.7;
+        color: #374151;
+      }
+      .rede-apoio-secao {
+        scroll-margin-top: 120px;
+      }
+      .rede-apoio-secao h2 {
+        font-size: 1.8rem;
+        color: #1f2937;
+        margin-bottom: 10px;
+      }
+      .rede-apoio-secao > p {
+        margin-bottom: 30px;
+        color: #6b7280;
+      }
+      .rede-lista {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+      .rede-item {
+        border: 1px dashed #d1d5db;
+        padding: 25px;
+        border-radius: 12px;
+      }
+      .rede-item h4 {
+        font-size: 1.1rem;
+        color: #1f2937;
+        margin-bottom: 8px;
+      }
+      .rede-item p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+      @media (max-width: 1024px) {
+        .violencia-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .violencia-grid,
+        .rede-lista {
+          grid-template-columns: 1fr;
+        }
+        .direitos-topo h1 {
+          font-size: 1.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/prefei.jfif" alt="Secretaria da Mulher" />
+          <div class="logo-text">
+            <h2>Secretaria da Mulher</h2>
+            <span>Prefeitura Municipal de Lajedo</span>
+          </div>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li><a href="#tipos-violencia">Tipos de violência</a></li>
+            <li><a href="index.html#ajuda-section">Como pedir ajuda</a></li>
+            <li><a href="direitos.html" style="color: #db2777">Direitos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </nav>
+        <a href="index.html#ajuda-section" class="btn-ajuda header-btn-ajuda"
+          ><i class="bi bi-telephone-fill" style="margin-right: 8px"></i>
+          Precisa de ajuda?</a
+        >
+      </div>
+    </header>
+
+    <section class="direitos-topo">
+      <div class="container">
+        <h1>Conheça os Seus Direitos</h1>
+        <p>
+          A informação é a nossa maior ferramenta de proteção. Conheça as leis,
+          identifique os sinais de abuso e saiba onde encontrar amparo legal e
+          psicológico em nosso município.
+        </p>
+      </div>
+    </section>
+
+    <main class="direitos-conteudo">
+      <div class="container">
+        <div class="lei-bloco">
+          <h2>A Lei Maria da Penha (Lei nº 11.340)</h2>
+          <p>
+            Criada para estipular punições rigorosas para atos de violência
+            doméstica e familiar contra a mulher, a Lei Maria da Penha é
+            considerada pela ONU uma das melhores legislações do mundo. Ela
+            garante que toda mulher tenha o direito de viver sem violência.
+          </p>
+        </div>
+
+        <div class="section-header" id="tipos-violencia">
+          <div>
+            <span class="section-line"></span>
+            <h2>As 5 Formas de Violência Doméstica</h2>
+          </div>
+        </div>
+        <p>
+          Muitas pessoas acreditam que a violência se restringe à agressão
+          física, mas a legislação brasileira identifica cinco categorias de
+          abusos:
+        </p>
+
+        <div class="violencia-grid">
+          <div class="violencia-card">
+            <h3>
+              <i class="bi bi-exclamation-triangle-fill"></i> Violência Física
+            </h3>
+            <p>
+              Qualquer conduta que ofenda a integridade ou a saúde corporal da
+              mulher, como empurrões, socos, tapas ou lesões.
+            </p>
+          </div>
+          <div class="violencia-card">
+            <h3>
+              <i class="bi bi-chat-square-dots-fill"></i> Violência Psicológica
+            </h3>
+            <p>
+              Ações que causam dano emocional, diminuição da autoestima,
+              humilhação, isolamento ou ameaças constantes.
+            </p>
+          </div>
+          <div class="violencia-card">
+            <h3><i class="bi bi-lock-fill"></i> Violência Sexual</h3>
+            <p>
+              Presenciar, manter ou participar de relação sexual não desejada
+              mediante intimidação, coação ou força.
+            </p>
+          </div>
+          <div class="violencia-card">
+            <h3><i class="bi bi-cash-coin"></i> Violência Patrimonial</h3>
+            <p>
+              Retenção, subtração ou destruição parcial ou total de objetos
+              pessoais, instrumentos de trabalho ou documentos.
+            </p>
+          </div>
+          <div class="violencia-card">
+            <h3><i class="bi bi-person-badge-fill"></i> Violência Moral</h3>
+            <p>
+              Qualquer conduta que configure calúnia, difamação ou injúria,
+              xingamentos ou falsas acusações que mancham a honra.
+            </p>
+          </div>
+        </div>
+
+        <section class="rede-apoio-secao" id="rede-acolhimento">
+          <div class="section-header">
+            <div>
+              <span class="section-line"></span>
+              <h2>A Rede de Acolhimento em Lajedo</h2>
+            </div>
+          </div>
+          <p>
+            Você não está sozinha. A prefeitura municipal oferece serviços
+            focados na proteção e reconstrução da autonomia das mulheres:
+          </p>
+          <div class="rede-lista">
+            <div class="rede-item">
+              <h4>Secretaria da Mulher</h4>
+              <p>
+                Apoio institutional, orientação jurídica, encaminhamento para
+                programas sociais e oficinas de capacitação.
+              </p>
+            </div>
+            <div class="rede-item">
+              <h4>Apoio Psicossocial</h4>
+              <p>
+                Atendimento especializado com psicólogas e assistentes sociais
+                para suporte emocional continuado.
+              </p>
+            </div>
+            <div class="rede-item">
+              <h4>Canais de Denúncia</h4>
+              <p>
+                Integração direta com as forças de segurança locais e nacionais
+                para aplicação de medidas urgentes.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-col col-identidade">
+          <div class="footer-logo">
+            <img
+              src="imagens/prefei.jfif"
+              alt="Logo Prefeitura"
+              style="
+                width: 45px;
+                height: 45px;
+                object-fit: cover;
+                border-radius: 4px;
+              "
+            />
+            <div>
+              <h3>Secretaria da Mulher de Lajedo</h3>
+              <span>Em parceria com a Prefeitura Municipal de Lajedo</span>
+            </div>
+          </div>
+          <div class="social">
+            <a href="https://www.instagram.com/sec.mulher_lajedo/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/PrefeituradeLajedo/"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html#sobre-secretaria">Sobre</a></li>
+            <li><a href="#tipos-violencia">Tipos de violência</a></li>
+            <li><a href="index.html#ajuda-section">Como pedir ajuda</a></li>
+            <li><a href="#">Direitos</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Informações</h4>
+          <ul>
+            <li><a href="#">Lei Maria da Penha</a></li>
+            <li>
+              <a href="noticias.html#faq-section">Perguntas Frequentes</a>
+            </li>
+            <li>
+              <a href="index.html#ajuda-section">Canais de Atendimento</a>
+            </li>
+            <li><a href="noticias.html">Notícias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col col-icones">
+          <h4>Canais de ajuda</h4>
+          <ul>
+            <li>
+              <i class="bi bi-telephone"></i
+              ><a href="tel:180">180 - Central de Atendimento à Mulher</a>
+            </li>
+            <li>
+              <i class="bi bi-shield"></i
+              ><a href="tel:190">190 - Polícia Militar</a>
+            </li>
+            <li>
+              <i class="bi bi-geo-alt"></i
+              ><span>Procure o CRAS ou CREAS mais próximo.</span>
+            </li>
+            <li>
+              <i class="bi bi-lock"></i
+              ><a
+                href="admin.html"
+                style="font-weight: 600; color: var(--rosa-principal)"
+                >Painel Restrito</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-flex">
+          <p>
+            © 2026 Secretaria da Mulher de Lajedo. Todos os direitos reservados.
+          </p>
+          <p>
+            Desenvolvido com
+            <i
+              class="bi bi-heart-fill"
+              style="color: var(--rosa-principal)"
+            ></i>
+            para todas as mulheres.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

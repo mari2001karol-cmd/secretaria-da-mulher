@@ -23,8 +23,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  color: var(--cinza-texto);
-  background: #fff;
+  color: var(--cinza-texto) !important; /* Garante o texto escuro */
+  background: #ffffff !important;        /* Força o fundo sempre branco no PC e celular */
+  background-color: #ffffff !important;  /* Neutraliza o Modo Escuro forçado dos celulares */
 }
 
 a {
@@ -138,7 +139,7 @@ nav a:hover {
 }
 
 /* ==============================
-        HERO
+        HERO 
 ============================== */
 .hero {
   margin-top: 90px;
@@ -197,39 +198,9 @@ nav a:hover {
   line-height: 1.7;
 }
 
+
 .hero-buttons {
-  display: flex;
-  gap: 15px;
-  margin-top: 35px;
-}
-
-.btn-primary {
-  background: var(--rosa-principal);
-  color: white;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.2s;
-  display: inline-block;
-}
-
-.btn-primary:hover {
-  background: var(--rosa-hover);
-}
-
-.btn-secondary {
-  border: 2px solid var(--rosa-principal);
-  color: var(--rosa-principal);
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.2s;
-  display: inline-block;
-}
-
-.btn-secondary:hover {
-  background: var(--rosa-principal);
-  color: white;
+  display: none !important;
 }
 
 /* ==============================
@@ -238,7 +209,7 @@ nav a:hover {
 .noticias {
   padding: 80px 0;
   background: #fff;
-  scroll-margin-top: 110px; /* Margem de proteção contra cabeçalho fixo */
+  scroll-margin-top: 110px;
 }
 
 .section-header {
@@ -340,7 +311,7 @@ nav a:hover {
 .acesso-rapido {
   padding: 40px 0 60px;
   background: #fff;
-  scroll-margin-top: 110px; /* Margem de proteção contra cabeçalho fixo */
+  scroll-margin-top: 110px;
 }
 
 .acesso-grid {
@@ -394,7 +365,7 @@ nav a:hover {
 ============================== */
 .ajuda-section {
   padding: 40px 0 80px;
-  scroll-margin-top: 120px; /* SOLUÇÃO EXATA: Cria o espaço para a imagem não cortar no topo */
+  scroll-margin-top: 120px;
 }
 
 .ajuda-grid {
@@ -479,12 +450,12 @@ nav a:hover {
 }
 
 /* ==============================
-        SOBRE A SECRETARIA (Unificado)
+        SOBRE A SECRETARIA 
 ============================== */
 .secretaria {
   padding: 60px 0;
   background: #fff;
-  scroll-margin-top: 110px; /* Margem de proteção contra cabeçalho fixo */
+  scroll-margin-top: 110px;
 }
 
 .secretaria-container-box {
@@ -684,7 +655,7 @@ nav a:hover {
 }
 
 /* ==============================
-        MEDIA QUERIES (RESPONSIVO)
+    MEDIA QUERIES 
 ============================== */
 @media (max-width: 1024px) {
   .menu-toggle {
@@ -732,68 +703,258 @@ nav a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 60px 0;
-  }
-  .hero-overlay .container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-buttons {
-    justify-content: center;
-  }
-  .ajuda-grid {
-    flex-direction: column;
-  }
-  .acesso-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .footer-bottom-flex {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-}
 /* ==========================================================
-   VISUAL EXCLUSIVO PARA TELAS MENORES (Celulares e Tablets)
+   VISUAL EXCLUSIVO PARA CELULARES 
    ========================================================== */
 @media (max-width: 768px) {
     
-    /* 1. Ajustar o tamanho dos textos para não quebrarem feio */
-    .hero h1 {
-        font-size: 1.8rem; /* Diminui o título principal no celular */
-        line-height: 1.3;
-    }
-
-    /* 2. Mudar a disposição dos elementos (Empilhamento) */
-    /* Se no computador as notícias ficam lado a lado, no celular elas viram uma coluna só */
-    .noticias-grid, .acesso-grid, .ajuda-grid, .secretaria-container-box {
-        display: flex;
-        flex-direction: column; /* Força os blocos a ficarem um embaixo do outro */
-        gap: 20px; /* Dá um espaçamento harmônico entre eles */
-    }
-
-    /* 3. Ajustar o espaçamento interno (Padding) para telas pequenas */
+    /* ---- 1. GERAL ---- */
     .container {
-        padding: 0 20px; /* Evita que o texto encoste nas bordas do celular */
+        padding: 0 12px;
     }
 
-    /* 4. Esconder ou transformar elementos */
-    /* Exemplo: Esconder o menu normal do computador para usar o botão de 3 listrinhas */
-    .nav-menu {
-        display: none; 
+    /* ---- 2. HEADER ---- */
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
-    
+    .nav-menu, .header-btn-ajuda {
+        display: none;
+    }
     .menu-toggle {
-        display: block; /* Mostra o botão de abrir menu apenas no celular */
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #e54283;
+    }
+/* ---- 3. HERO MOBILE  ---- */
+    .hero {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important; /* Remove a altura gigante de 75vh do PC */
+        min-height: auto !important; /* Destrói os 500px mínimos que criavam o buraco */
+        margin-top: 90px !important; /* Mantém apenas o espaço para o menu não cobrir a foto */
+        background: url('imagens/mulheres2.jfif') no-repeat center top !important;
+        background-size: contain !important;
+        aspect-ratio: 2 / 1 !important; /* Força o container a ter o tamanho exato da foto */
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .hero-content, .hero-image, .hero > img, .hero-overlay {
+        display: none !important;
+    }
+
+    
+    .noticias {
+        padding: 20px 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* ---- 4. SEÇÃO PRECISA DE AJUDA  ---- */
+    .ajuda-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .banner img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+    .card-ajuda {
+        width: 100% !important;
+        padding: 14px 10px !important;
+        background: #fff5f8;
+        border-radius: 12px;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+    }
+    .card-ajuda h2 {
+        grid-column: 1 / -1 !important;
+        font-size: 1.1rem !important;
+        text-align: center;
+        margin-bottom: 6px !important;
+    }
+    .card-ajuda .canal {
+        float: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 10px 4px !important;
+        background: #fff;
+        border-radius: 8px;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        border: 1px solid #ffeef2;
+        height: 100% !important;
+    }
+    .icone {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 14px !important;
+        margin-bottom: 6px !important;
+    }
+    .canal h3 {
+        font-size: 0.72rem !important;
+        font-weight: 700;
+        line-height: 1.2 !important;
+        color: var(--cinza-titulo);
+    }
+    .canal p {
+        font-size: 0.58rem !important;
+        line-height: 1.2 !important;
+        color: #6b7280;
+        margin-top: 3px;
+    }
+    .card-ajuda::after {
+        display: none !important;
+    }
+
+    /* ---- 5. ACESSO RÁPIDO ---- */
+    .acesso-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .acesso-card {
+        padding: 12px 8px;
+    }
+
+    /* ---- 6. ÚLTIMAS NOTÍCIAS ---- */
+    .noticias-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ---- 7. SOBRE A SECRETARIA & MISSÃO ---- */
+    .secretaria-container-box {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 20px 12px !important;
+        background: #fff5f6;
+        border-radius: 12px;
+    }
+    .secretaria-col-principal {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        padding-right: 0 !important;
+        margin-bottom: 8px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .secretaria-col-principal h2 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px;
+    }
+    .secretaria-col-principal p {
+        font-size: 0.78rem !important;
+        line-height: 1.4;
+        margin-bottom: 12px !important;
+    }
+    .secretaria-col-item {
+        float: none !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 14px 10px !important;
+        background: #fff;
+        border-radius: 8px;
+        border-left: none !important;
+        border-top: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .secretaria-col-item .card-icon {
+        font-size: 1.4rem !important;
+        margin-bottom: 6px !important;
+        display: flex !important;
+        justify-content: center !important;
+        color: var(--rosa-principal);
+    }
+    .secretaria-col-item h3 {
+        font-size: 0.82rem !important;
+        font-weight: 700;
+        margin-bottom: 4px !important;
+        color: var(--cinza-titulo);
+    }
+    .secretaria-col-item p {
+        font-size: 0.68rem !important;
+        line-height: 1.3 !important;
+        color: var(--cinza-texto);
+    }
+
+    /* ---- 8. RODAPÉ MOBILE ULTRA COMPACTO ---- */
+    .footer {
+        font-size: 0.55rem !important; 
+        padding: 15px 0 !important;
+    }
+    .footer-content {
+        display: grid !important;
+        grid-template-columns: 1.1fr 0.8fr 1fr 1.1fr !important;
+        gap: 6px !important; 
+        padding: 15px 0 10px !important;
+    }
+    .footer-logo {
+        gap: 4px !important;
+        margin-bottom: 8px !important;
+    }
+    .footer-logo img {
+        width: 20px !important; 
+        height: 20px !important;
+    }
+    .footer-logo h3 {
+        font-size: 0.55rem !important;
+        line-height: 1.1 !important;
+    }
+    .footer-logo span {
+        font-size: 0.48rem !important;
+    }
+    .footer-col h4 {
+        font-size: 0.58rem !important; 
+        margin-bottom: 6px !important;
+    }
+    .footer-col ul li {
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
+    }
+    .col-icones ul li {
+        gap: 3px !important;
+    }
+    .col-icones ul li i {
+        font-size: 0.6rem !important;
+    }
+    .social {
+        gap: 4px !important;
+        margin-top: 4px !important;
+    }
+    .social a {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 0.55rem !important;
+    }
+    .footer-bottom {
+        padding: 8px 0 !important;
+        font-size: 0.5rem !important;
+    }
+    .footer-bottom-flex {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        text-align: left !important;
     }
 }

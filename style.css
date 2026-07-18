@@ -139,7 +139,7 @@ nav a:hover {
 }
 
 /* ==============================
-        HERO 
+        HERO (BOTÕES REMOVIDOS)
 ============================== */
 .hero {
   margin-top: 90px;
@@ -198,7 +198,7 @@ nav a:hover {
   line-height: 1.7;
 }
 
-
+/* Os botões antigos do Hero foram desativados do layout geral */
 .hero-buttons {
   display: none !important;
 }
@@ -450,7 +450,7 @@ nav a:hover {
 }
 
 /* ==============================
-        SOBRE A SECRETARIA 
+        SOBRE A SECRETARIA (Unificado)
 ============================== */
 .secretaria {
   padding: 60px 0;
@@ -655,7 +655,7 @@ nav a:hover {
 }
 
 /* ==============================
-    MEDIA QUERIES 
+    MEDIA QUERIES (TABLETS)
 ============================== */
 @media (max-width: 1024px) {
   .menu-toggle {
@@ -704,7 +704,7 @@ nav a:hover {
 }
 
 /* ==========================================================
-   VISUAL EXCLUSIVO PARA CELULARES 
+   VISUAL EXCLUSIVO PARA CELULARES (MOBILE TOTALMENTE AJUSTADO)
    ========================================================== */
 @media (max-width: 768px) {
     
@@ -721,43 +721,107 @@ nav a:hover {
         padding-top: 15px;
         padding-bottom: 15px;
     }
-    .nav-menu, .header-btn-ajuda {
-        display: none;
+    .header-btn-ajuda {
+        display: none !important;
     }
     .menu-toggle {
-        display: block;
+        display: block !important;
         background: none;
         border: none;
         font-size: 2rem;
         color: #e54283;
     }
-/* ---- 3. HERO MOBILE  ---- */
+
+    /* ---- AJUTE DO MENU EXPANSÍVEL (Fix dos 3 tracinhos) ---- */
+    .nav-menu {
+        display: block !important;
+        position: absolute !important;
+        top: 90px !important;
+        left: -100% !important; /* Escondido por padrão */
+        width: 100% !important;
+        background: #ffffff !important;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05) !important;
+        transition: 0.3s ease-in-out !important;
+        padding: 20px 0 !important;
+        z-index: 999 !important;
+    }
+    .nav-menu.active {
+        left: 0 !important; /* Desliza para a tela */
+    }
+    .nav-menu ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+    .nav-menu ul li a {
+        font-size: 0.9rem !important;
+        color: var(--cinza-titulo) !important;
+        font-weight: 600 !important;
+        padding: 8px 0 !important;
+        display: block !important;
+    }
+
+    /* ---- 3. HERO MOBILE (Zero Espaço Branco) ---- */
     .hero {
         display: block !important;
         position: relative !important;
         width: 100% !important;
-        height: auto !important; /* Remove a altura gigante de 75vh do PC */
-        min-height: auto !important; /* Destrói os 500px mínimos que criavam o buraco */
-        margin-top: 90px !important; /* Mantém apenas o espaço para o menu não cobrir a foto */
+        height: auto !important;
+        min-height: auto !important; /* Destrói altura fantasma do PC */
+        margin-top: 90px !important;
         background: url('imagens/mulheres2.jfif') no-repeat center top !important;
         background-size: contain !important;
-        aspect-ratio: 2 / 1 !important; /* Força o container a ter o tamanho exato da foto */
+        aspect-ratio: 2 / 1 !important; 
         padding: 0 !important;
-        margin-bottom: 0 !important;
         overflow: hidden !important;
     }
-
     .hero-content, .hero-image, .hero > img, .hero-overlay {
         display: none !important;
     }
 
-    
+    /* ---- 4. SEÇÃO ÚLTIMAS NOTÍCIAS (Lado a Lado Compacto) ---- */
     .noticias {
-        padding: 20px 0 !important;
+        padding: 15px 0 25px !important; /* Colado logo abaixo da foto do topo */
         margin-top: 0 !important;
     }
+    .section-header {
+        margin-bottom: 20px !important;
+    }
+    .section-header h2 {
+        font-size: 1.2rem !important;
+    }
+    .ver-todas {
+        font-size: 0.75rem !important;
+    }
+    /* Grade dinâmica com 2 colunas para colocar as notícias lado a lado */
+    .noticias-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .noticia-card {
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 8px !important;
+    }
+    .noticia-card img {
+        height: 110px !important; /* Imagens menores proporcionais */
+    }
+    .noticia-card .data {
+        margin: 8px 8px 2px !important;
+        font-size: 0.65rem !important;
+    }
+    .noticia-card h3 {
+        margin: 0 8px 6px !important;
+        font-size: 0.78rem !important; /* Fontes compactas para caber na caixinha */
+        line-height: 1.3 !important;
+    }
+    .noticia-card p, .noticia-card a {
+        display: none !important; /* Oculta resumos longos para economizar espaço em tela */
+    }
 
-    /* ---- 4. SEÇÃO PRECISA DE AJUDA  ---- */
+    /* ---- 5. SEÇÃO PRECISA DE AJUDA (3 Colunas Lado a Lado) ---- */
     .ajuda-grid {
         display: flex;
         flex-direction: column;
@@ -819,7 +883,7 @@ nav a:hover {
         display: none !important;
     }
 
-    /* ---- 5. ACESSO RÁPIDO ---- */
+    /* ---- 6. ACESSO RÁPIDO ---- */
     .acesso-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -829,14 +893,7 @@ nav a:hover {
         padding: 12px 8px;
     }
 
-    /* ---- 6. ÚLTIMAS NOTÍCIAS ---- */
-    .noticias-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* ---- 7. SOBRE A SECRETARIA & MISSÃO ---- */
+    /* ---- 7. SOBRE A SECRETARIA & MISSÃO (Grade 2x2 Simétrica e Travada) ---- */
     .secretaria-container-box {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -862,7 +919,7 @@ nav a:hover {
     .secretaria-col-principal p {
         font-size: 0.78rem !important;
         line-height: 1.4;
-        margin-bottom: 12px !important;
+        margin-bottom: 4px !important;
     }
     .secretaria-col-item {
         float: none !important;
@@ -899,9 +956,9 @@ nav a:hover {
         color: var(--cinza-texto);
     }
 
-    /* ---- 8. RODAPÉ MOBILE ULTRA COMPACTO ---- */
+    /* ---- 8. RODAPÉ MOBILE ULTRA COMPACTO (Letras Bem Menores Lado a Lado) ---- */
     .footer {
-        font-size: 0.55rem !important; 
+        font-size: 0.55rem !important;
         padding: 15px 0 !important;
     }
     .footer-content {
@@ -915,7 +972,7 @@ nav a:hover {
         margin-bottom: 8px !important;
     }
     .footer-logo img {
-        width: 20px !important; 
+        width: 20px !important;
         height: 20px !important;
     }
     .footer-logo h3 {
@@ -926,7 +983,7 @@ nav a:hover {
         font-size: 0.48rem !important;
     }
     .footer-col h4 {
-        font-size: 0.58rem !important; 
+        font-size: 0.58rem !important;
         margin-bottom: 6px !important;
     }
     .footer-col ul li {

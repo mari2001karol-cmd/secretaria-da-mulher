@@ -763,3 +763,37 @@ nav a:hover {
     text-align: center;
   }
 }
+/* ==========================================================
+   VISUAL EXCLUSIVO PARA TELAS MENORES (Celulares e Tablets)
+   ========================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustar o tamanho dos textos para não quebrarem feio */
+    .hero h1 {
+        font-size: 1.8rem; /* Diminui o título principal no celular */
+        line-height: 1.3;
+    }
+
+    /* 2. Mudar a disposição dos elementos (Empilhamento) */
+    /* Se no computador as notícias ficam lado a lado, no celular elas viram uma coluna só */
+    .noticias-grid, .acesso-grid, .ajuda-grid, .secretaria-container-box {
+        display: flex;
+        flex-direction: column; /* Força os blocos a ficarem um embaixo do outro */
+        gap: 20px; /* Dá um espaçamento harmônico entre eles */
+    }
+
+    /* 3. Ajustar o espaçamento interno (Padding) para telas pequenas */
+    .container {
+        padding: 0 20px; /* Evita que o texto encoste nas bordas do celular */
+    }
+
+    /* 4. Esconder ou transformar elementos */
+    /* Exemplo: Esconder o menu normal do computador para usar o botão de 3 listrinhas */
+    .nav-menu {
+        display: none; 
+    }
+    
+    .menu-toggle {
+        display: block; /* Mostra o botão de abrir menu apenas no celular */
+    }
+}

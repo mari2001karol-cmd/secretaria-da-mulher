@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Secretaria da Mulher</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+    <!-- TELA DE LOGIN PRINCIPAL -->
+    <div class="login-container" id="login-container-box">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="imagens/logo.png" alt="Logo Prefeitura de Lajedo" class="login-logo" onerror="this.src='https://via.placeholder.com/70'">
+                <h2>Painel Administrativo</h2>
+                <span>Secretaria da Mulher de Lajedo</span>
+            </div>
+
+            <form class="login-form" id="form-login">
+                <div class="input-group">
+                    <label for="email"><i class="bi bi-envelope"></i> E-mail Funcional</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-group password-wrapper">
+                    <label for="password"><i class="bi bi-lock"></i> Senha de Acesso</label>
+                    <div class="input-icon-container">
+                        <input type="password" id="password" required>
+                        <i class="bi bi-eye toggle-password" data-target="password"></i>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="forget-password" id="btn-esqueci">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Acessar Painel</button>
+            </form>
+
+            <div class="login-footer">
+                <a href="index.html"><i class="bi bi-arrow-left"></i> Voltar para o site principal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DA DASHBOARD INTERNA COMPLETA -->
+    <div class="dashboard-panel" id="dashboard-panel" style="display: none;">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="imagens/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/40'">
+                <div>
+                    <h3>Painel Gestor</h3>
+                    <span>Lajedo - PE</span>
+                </div>
+            </div>
+            <!-- MENU DE NAVEGAÇÃO ENTRE ABAS -->
+            <ul class="sidebar-menu">
+                <li class="nav-tab active" data-tab="tab-geral"><a href="#"><i class="bi bi-grid"></i> Visão Geral</a></li>
+                <li class="nav-tab" data-tab="tab-textos"><a href="#"><i class="bi bi-file-text"></i> Textos & Frases</a></li>
+                <li class="nav-tab" data-tab="tab-imagens"><a href="#"><i class="bi bi-image"></i> Alterar Fotos</a></li>
+                <li class="nav-tab" data-tab="tab-noticias"><a href="#"><i class="bi bi-newspaper"></i> As 4 Notícias</a></li>
+                <li class="nav-tab" data-tab="tab-ajuda"><a href="#"><i class="bi bi-telephone-inbound"></i> Canais de Ajuda</a></li>
+                <li class="nav-tab" data-tab="tab-faq"><a href="#"><i class="bi bi-question-circle"></i> Perguntas Frequentes</a></li>
+                <li class="logout-item"><a href="#" id="btn-logout"><i class="bi bi-box-arrow-left"></i> Sair do Painel</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            <header class="content-header">
+                <h2 id="tab-title">Visão Geral do Painel</h2>
+                <div class="user-profile">
+                    <i class="bi bi-person-circle"></i>
+                    <span>secretariadamulher@lajedo.pe.gov.br</span>
+                </div>
+            </header>
+
+            <!-- ================= ABAS DO PAINEL ================= -->
+
+            <!-- ABA 1: VISÃO GERAL -->
+            <div id="tab-geral" class="tab-content-item">
+                <section class="dashboard-cards">
+                    <div class="d-card">
+                        <i class="bi bi-newspaper text-rosa"></i>
+                        <div><h4>4</h4><p>Notícias Controladas</p></div>
+                    </div>
+                    <div class="d-card">
+                        <i class="bi bi-telephone text-rosa"></i>
+                        <div><h4>Ativos</h4><p>Canais de Emergência</p></div>
+                    </div>
+                    <div class="d-card">
+                        <i class="bi bi-shield-check text-rosa"></i>
+                        <div><h4>Seguro</h4><p>Conexão Local Storage</p></div>
+                    </div>
+                </section>
+                <div class="management-section">
+                    <h3>Bem-vinda ao seu Painel Administrativo!</h3>
+                    <p style="color: #6b7280; margin-top: 10px; font-size: 0.92rem;">Use o menu lateral esquerdo para selecionar qual área do portal público da Secretaria você deseja atualizar neste momento. Todas as alterações feitas aqui mudam o site em tempo real.</p>
+                </div>
+            </div>
+
+            <!-- ABA 2: TEXTOS & FRASES -->
+            <div id="tab-textos" class="tab-content-item" style="display: none;">
+                <div class="management-section">
+                    <h3><i class="bi bi-file-text"></i> Alterar Frase de Boas-Vindas e Sobre</h3>
+                    <form id="form-textos" class="simulated-form">
+                        <div class="input-group">
+                            <label for="txt-titulo-principal">Título Principal da Home</label>
+                            <input type="text" id="txt-titulo-principal" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="txt-desc-principal">Texto Descritivo de Introdução</label>
+                            <textarea id="txt-desc-principal" rows="3" style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; font-family:inherit; font-size:0.9rem;" required></textarea>
+                        </div>
+                        <div class="input-group" style="margin-top: 15px;">
+                            <label for="txt-sobre-secretaria">Texto da Seção "Sobre a Secretaria"</label>
+                            <textarea id="txt-sobre-secretaria" rows="4" style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; font-family:inherit; font-size:0.9rem;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px; margin-top: 10px;">Salvar Textos</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ABA 3: FOTOS & IMAGENS -->
+            <div id="tab-imagens" class="tab-content-item" style="display: none;">
+                <div class="management-section">
+                    <h3><i class="bi bi-image"></i> Substituir Fotos do Site (Carregue arquivos de imagem)</h3>
+                    <form id="form-imagens" class="simulated-form">
+                        <div class="input-group">
+                            <label>Logo Oficial do Topo/Rodapé</label>
+                            <input type="file" id="img-logo" accept="image/*">
+                        </div>
+                        <div class="input-group">
+                            <label>Foto Principal da Introdução (Home Banner)</label>
+                            <input type="file" id="img-banner" accept="image/*">
+                        </div>
+                        <div class="input-group">
+                            <label>Foto da Seção "Sobre a Secretaria"</label>
+                            <input type="file" id="img-sobre" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px; margin-top: 10px;">Salvar Novas Fotos</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ABA 4: AS 4 NOTÍCIAS -->
+            <div id="tab-noticias" class="tab-content-item" style="display: none;">
+                <div class="management-section">
+                    <h3><i class="bi bi-newspaper"></i> Editar os 4 Cards de Notícias Fictícias</h3>
+                    <form id="form-noticias" class="simulated-form">
+                        <!-- Notícia 1 -->
+                        <div style="border-bottom: 1px solid #f3f4f6; padding-bottom: 15px; margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Card de Notícia 1 (Mais Recente)</strong>
+                            <div class="input-group" style="margin-top:8px;">
+                                <input type="text" id="not-tit-1" placeholder="Título" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="not-desc-1" placeholder="Breve Resumo/Subtítulo" required>
+                            </div>
+                            <div class="input-group">
+                                <label style="font-size: 0.75rem;">Foto da Notícia 1</label>
+                                <input type="file" id="not-img-1" accept="image/*">
+                            </div>
+                        </div>
+                        <!-- Notícia 2 -->
+                        <div style="border-bottom: 1px solid #f3f4f6; padding-bottom: 15px; margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Card de Notícia 2</strong>
+                            <div class="input-group" style="margin-top:8px;">
+                                <input type="text" id="not-tit-2" placeholder="Título" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="not-desc-2" placeholder="Breve Resumo/Subtítulo" required>
+                            </div>
+                            <div class="input-group">
+                                <label style="font-size: 0.75rem;">Foto da Notícia 2</label>
+                                <input type="file" id="not-img-2" accept="image/*">
+                            </div>
+                        </div>
+                        <!-- Notícia 3 -->
+                        <div style="border-bottom: 1px solid #f3f4f6; padding-bottom: 15px; margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Card de Notícia 3</strong>
+                            <div class="input-group" style="margin-top:8px;">
+                                <input type="text" id="not-tit-3" placeholder="Título" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="not-desc-3" placeholder="Breve Resumo/Subtítulo" required>
+                            </div>
+                            <div class="input-group">
+                                <label style="font-size: 0.75rem;">Foto da Notícia 3</label>
+                                <input type="file" id="not-img-3" accept="image/*">
+                            </div>
+                        </div>
+                        <!-- Notícia 4 -->
+                        <div style="padding-bottom: 15px; margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Card de Notícia 4 (Mais Antiga)</strong>
+                            <div class="input-group" style="margin-top:8px;">
+                                <input type="text" id="not-tit-4" placeholder="Título" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="not-desc-4" placeholder="Breve Resumo/Subtítulo" required>
+                            </div>
+                            <div class="input-group">
+                                <label style="font-size: 0.75rem;">Foto da Notícia 4</label>
+                                <input type="file" id="not-img-4" accept="image/*">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px;">Salvar Todas as Notícias</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ABA 5: CANAIS DE AJUDA -->
+            <div id="tab-ajuda" class="tab-content-item" style="display: none;">
+                <div class="management-section">
+                    <h3><i class="bi bi-telephone-inbound"></i> Modificar Contatos de Emergência & Endereço</h3>
+                    <form id="form-ajuda" class="simulated-form">
+                        <div class="input-group">
+                            <label for="tel-secretaria">Telefone/WhatsApp da Secretaria</label>
+                            <input type="text" id="tel-secretaria" placeholder="(87) 9XXXX-XXXX" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="tel-patrulha">Telefone da Patrulha Maria da Penha Local</label>
+                            <input type="text" id="tel-patrulha" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="end-secretaria">Endereço Físico Completo da Sede</label>
+                            <input type="text" id="end-secretaria" required>
+                        </div>
+                        <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px; margin-top: 10px;">Salvar Contatos</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ABA 6: PERGUNTAS FREQUENTES (FAQ) -->
+            <div id="tab-faq" class="tab-content-item" style="display: none;">
+                <div class="management-section">
+                    <h3><i class="bi bi-question-circle"></i> Configurar as 3 Principais Dúvidas da População</h3>
+                    <form id="form-faq" class="simulated-form">
+                        <!-- FAQ 1 -->
+                        <div style="margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Pergunta 1</strong>
+                            <input type="text" id="faq-q-1" style="width:100%; margin-top:5px; margin-bottom:5px; padding:10px; border:1px solid #e5e7eb; border-radius:8px;" required>
+                            <textarea id="faq-a-1" rows="2" style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; font-family:inherit;" placeholder="Resposta" required></textarea>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div style="margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Pergunta 2</strong>
+                            <input type="text" id="faq-q-2" style="width:100%; margin-top:5px; margin-bottom:5px; padding:10px; border:1px solid #e5e7eb; border-radius:8px;" required>
+                            <textarea id="faq-a-2" rows="2" style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; font-family:inherit;" placeholder="Resposta" required></textarea>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div style="margin-bottom: 20px;">
+                            <strong style="color:var(--rosa-principal);">Pergunta 3</strong>
+                            <input type="text" id="faq-q-3" style="width:100%; margin-top:5px; margin-bottom:5px; padding:10px; border:1px solid #e5e7eb; border-radius:8px;" required>
+                            <textarea id="faq-a-3" rows="2" style="width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; font-family:inherit;" placeholder="Resposta" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px;">Salvar FAQ</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- MODAL DE RECUPERAÇÃO -->
+    <div class="modal-recovery" id="modal-recovery">
+        <div class="modal-content">
+            <button type="button" class="modal-close" id="btn-close-modal">&times;</button>
+            <div class="login-header">
+                <h2>Recuperar Senha</h2>
+                <span>Insira sua chave master de segurança</span>
+            </div>
+            <div class="modal-inner-form">
+                <div id="step-key" style="display: block;">
+                    <div class="input-group">
+                        <label for="recovery-key"><i class="bi bi-key"></i> Chave de Acesso Master</label>
+                        <div class="input-icon-container">
+                            <input type="password" id="recovery-key">
+                            <i class="bi bi-eye toggle-password" data-target="recovery-key"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-login" id="btn-verify-key">Verificar Chave</button>
+                </div>
+                <div id="step-new-password" style="display: none;">
+                    <div class="input-group">
+                        <label for="new-password"><i class="bi bi-lock-focus"></i> Nova Senha</label>
+                        <div class="input-icon-container">
+                            <input type="password" id="new-password">
+                            <i class="bi bi-eye toggle-password" data-target="new-password"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password"><i class="bi bi-lock-check"></i> Confirmar Nova Senha</label>
+                        <div class="input-icon-container">
+                            <input type="password" id="confirm-password">
+                            <i class="bi bi-eye toggle-password" data-target="confirm-password"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-login" id="btn-save-password">Salvar Nova Senha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js?v=4"></script>
+</body>
+</html>

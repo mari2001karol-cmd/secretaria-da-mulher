@@ -1,5 +1,37 @@
-// Aguarda o carregamento do esqueleto do HTML para aplicar os dados e comportamentos rapidamente
+// Aguarda o carregamento do esqueleto do HTML para aplicar os dados e comportamentos
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
+  // 6. ATUALIZAÇÃO DA PÁGINA INTERNA DA NOTÍCIA (LER MAIS)
+  // =========================================================
+
+  // Se estivermos na tela de leitura da Notícia 1
+  const imgNoticia1 = localStorage.getItem("site-img-noticia-1");
+  const titNoticia1 = localStorage.getItem("not-tit-1");
+  const descNoticia1 = localStorage.getItem("not-desc-1");
+
+  // 1. Atualiza a imagem principal grande da matéria
+  const imgDetalhePrincipal = document.querySelector(
+    ".noticia-detalhe img, article img, img[alt='Imagem Informativa']",
+  );
+  if (imgDetalhePrincipal && imgNoticia1) {
+    imgDetalhePrincipal.src = imgNoticia1;
+  }
+
+  // 2. Atualiza o título e o resumo principal dentro da página da notícia
+  const tituloDetalhe = document.querySelector(
+    ".noticia-detalhe h1, article h1",
+  );
+  if (tituloDetalhe && titNoticia1) {
+    tituloDetalhe.innerText = titNoticia1;
+  }
+
+  // 3. Atualiza a miniatura na barra lateral "Mais Recentes"
+  const miniaturasRecentes = document.querySelectorAll(
+    ".mais-recentes img, .sidebar-noticias img",
+  );
+  if (miniaturasRecentes.length > 0 && imgNoticia1) {
+    miniaturasRecentes[0].src = imgNoticia1;
+  }
   // =========================================================
   // 1. COMPORTAMENTO DO MENU HAMBÚRGUER & LINKS (MOBILE)
   // =========================================================
@@ -33,42 +65,55 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. SINCRONIZAÇÃO AUTOMÁTICA COM O PAINEL ADMINISTRATIVO
   // =========================================================
 
-  // 1. ATUALIZAR IMAGENS E LOGOS
+  // 1. ATUALIZAR IMAGENS E LOGOS INSTITUCIONAIS
   const logoSalva = localStorage.getItem("site-img-logo");
   const bannerSalvo = localStorage.getItem("site-img-banner");
   const sobreSalvo = localStorage.getItem("site-img-sobre");
 
   if (logoSalva) {
-    document.querySelectorAll("img[src*='logo.png']").forEach((img) => {
-      img.src = logoSalva;
-    });
+    document
+      .querySelectorAll(".logo img, img[src*='logo.png']")
+      .forEach((img) => {
+        img.src = logoSalva;
+      });
   }
   if (bannerSalvo) {
     const imgBanner = document.querySelector(
-      ".home-banner img, .introducao img",
+      ".hero-image, .home-banner img, .introducao img",
     );
     if (imgBanner) imgBanner.src = bannerSalvo;
   }
   if (sobreSalvo) {
-    const imgSobre = document.querySelector("#sobre img, .sobre-img img");
+    const imgSobre = document.querySelector(
+      ".banner img, #sobre img, .sobre-img img",
+    );
     if (imgSobre) imgSobre.src = sobreSalvo;
   }
 
-  // 2. ATUALIZAR TEXTOS E FRASES DA INTRODUÇÃO
+  // 2. ATUALIZAR TEXTOS E FRASES DA INTRODUÇÃO (MANTÉM CORES E QUEBRAS)
   const tituloPrincipal = localStorage.getItem("site-titulo");
   const descPrincipal = localStorage.getItem("site-desc");
   const sobreTexto = localStorage.getItem("site-sobre");
 
   if (tituloPrincipal) {
-    const elTitulo = document.querySelector(".introducao h1, .hero h1");
-    if (elTitulo) elTitulo.innerText = tituloPrincipal;
+    const elTitulo = document.querySelector(
+      ".hero-content h1, .introducao h1, .hero h1",
+    );
+    if (elTitulo) {
+      // Converte quebras de linha em <br> e permite utilizar a tag <span> para texto rosa
+      elTitulo.innerHTML = tituloPrincipal.replace(/\n/g, "<br>");
+    }
   }
   if (descPrincipal) {
-    const elDesc = document.querySelector(".introducao p, .hero p");
+    const elDesc = document.querySelector(
+      ".hero-content p, .introducao p, .hero p",
+    );
     if (elDesc) elDesc.innerText = descPrincipal;
   }
   if (sobreTexto) {
-    const elSobre = document.querySelector("#sobre p, .sobre-texto p");
+    const elSobre = document.querySelector(
+      ".secretaria-col-principal p, #sobre p, .sobre-texto p",
+    );
     if (elSobre) elSobre.innerText = sobreTexto;
   }
 
@@ -77,20 +122,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const telPat = localStorage.getItem("ajuda-tel-pat");
   const endereco = localStorage.getItem("ajuda-end");
 
-  if (telSec) {
-    const elTelSec = document.querySelector(".contato-secretaria, .tel-sec");
-    if (elTelSec) elTelSec.innerText = telSec;
+  const canais = document.querySelectorAll(".card-ajuda .canal");
+  if (canais.length >= 2) {
+    if (telSec) {
+      const pSec = canais[0].querySelector("p");
+      if (pSec) pSec.innerText = telSec;
+    }
+    if (telPat) {
+      const pPat = canais[1].querySelector("p");
+      if (pPat) pPat.innerText = telPat;
+    }
   }
-  if (telPat) {
-    const elTelPat = document.querySelector(".contato-patrulha, .tel-patrud");
-    if (elTelPat) elTelPat.innerText = telPat;
-  }
+
   if (endereco) {
     const elEnd = document.querySelector("footer address, .endereco-texto");
     if (elEnd) elEnd.innerText = endereco;
   }
 
-  // 4. ATUALIZAR OS 4 CARDS DE NOTÍCIAS
+  // 4. ATUALIZAR OS 4 CARDS DE NOTÍCIAS (COM IMAGENS BASE64)
   const cardsNoticias = document.querySelectorAll(
     ".noticia-card, .card-noticia",
   );
